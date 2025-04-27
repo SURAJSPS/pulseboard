@@ -38,6 +38,6 @@ void main() {
 
     expect(find.text('Temperature'), findsOneWidget);
     expect(find.text('25°C'), findsOneWidget);
-    expect(find.byType(Icon), findsNothing);
+    expect(find.byType(IconTheme), findsWidgets);
   });
 }

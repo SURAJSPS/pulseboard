@@ -90,7 +90,7 @@ class MainMenuRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.SettingsScreen]
+/// [_i4.SettingsPage]
 class SettingsRoute extends _i5.PageRouteInfo<void> {
   const SettingsRoute({List<_i5.PageRouteInfo>? children})
     : super(SettingsRoute.name, initialChildren: children);
@@ -100,7 +100,7 @@ class SettingsRoute extends _i5.PageRouteInfo<void> {
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i4.SettingsScreen();
+      return const _i4.SettingsPage();
     },
   );
 }

@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pulseboard/application/dashboard/sensor_controller.dart';
 
 @RoutePage()
-class SettingsScreen extends ConsumerWidget {
-  const SettingsScreen({super.key});
+class SettingsPage extends ConsumerWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

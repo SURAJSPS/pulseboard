@@ -7,7 +7,6 @@ import 'package:pulseboard/presentation/pages/details/widgets/detail_card.dart';
 import 'package:pulseboard/presentation/pages/dashboard/widgets/summary_card.dart';
 import 'package:pulseboard/presentation/pages/dashboard/widgets/bulle_chart.dart';
 import 'package:pulseboard/core/utils/app_utils.dart';
-import 'package:pulseboard/domain/di/app_providers.dart';
 
 import '../../../data/datasources/mock/sensor_data_mock_test.dart';
 
