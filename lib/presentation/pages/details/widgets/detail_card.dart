@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:pulseboard/core/utils/app_utils.dart';
 import 'package:pulseboard/domain/entities/sensor.dart';
 
