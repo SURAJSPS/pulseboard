@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pulseboard/application/sensor/sensor_controller.dart';
+import 'package:pulseboard/application/dashboard/sensor_controller.dart';
 
 class BubbleSizeToggle extends ConsumerWidget {
   const BubbleSizeToggle({super.key});

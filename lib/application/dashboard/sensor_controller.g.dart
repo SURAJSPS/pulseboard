@@ -6,7 +6,7 @@ part of 'sensor_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sensorControllerHash() => r'fdb76495cd7f09c0f39863af48202cb39df1bc47';
+String _$sensorControllerHash() => r'136043ec3a1fec58079509c3285b559382f2d4a5';
 
 /// See also [SensorController].
 @ProviderFor(SensorController)

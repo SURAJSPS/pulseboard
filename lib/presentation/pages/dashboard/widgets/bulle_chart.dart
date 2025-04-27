@@ -5,7 +5,7 @@ import 'package:pulseboard/domain/di/app_providers.dart';
 import 'package:pulseboard/core/routes/app_router.gr.dart';
 import 'package:pulseboard/core/utils/app_utils.dart';
 import 'package:pulseboard/domain/entities/sensor.dart';
-import 'package:pulseboard/application/sensor/sensor_controller.dart';
+import 'package:pulseboard/application/dashboard/sensor_controller.dart';
 import 'package:pulseboard/presentation/pages/dashboard/widgets/custom_bubble_chart.dart';
 
 class BubbleChart extends ConsumerWidget {
@@ -13,7 +13,12 @@ class BubbleChart extends ConsumerWidget {
   final bool isDisabled;
   final bool isTooltipEnabled;
 
-  const BubbleChart({super.key, required this.sensors ,this.isDisabled = false, this.isTooltipEnabled = true});
+  const BubbleChart({
+    super.key,
+    required this.sensors,
+    this.isDisabled = false,
+    this.isTooltipEnabled = true,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,8 +53,12 @@ class BubbleChart extends ConsumerWidget {
           },
           getBubbleColor: (sensor) => AppUtils.getSensorAnomalyColor(sensor),
           onBubbleTap:
-              (context, sensor) =>isDisabled?null:
-                  ref.read(routerProvider).push(DetailsRoute(sensor: sensor)),
+              (context, sensor) =>
+                  isDisabled
+                      ? null
+                      : ref
+                          .read(routerProvider)
+                          .push(DetailsRoute(sensor: sensor)),
         ),
       ),
     );

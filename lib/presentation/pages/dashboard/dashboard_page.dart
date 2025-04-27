@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pulseboard/application/dashboard/sensor_controller.dart';
 import 'package:pulseboard/presentation/pages/dashboard/widgets/bulle_chart.dart';
 import 'package:pulseboard/presentation/pages/dashboard/widgets/summary_card.dart';
-import 'package:pulseboard/application/sensor/sensor_controller.dart';
+
 import 'package:pulseboard/presentation/pages/dashboard/widgets/bubble_size_toggle.dart';
 
 @RoutePage()

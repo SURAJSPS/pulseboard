@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pulseboard/application/sensor/sensor_controller.dart';
+import 'package:pulseboard/application/dashboard/sensor_controller.dart';
 
 @RoutePage()
 class SettingsScreen extends ConsumerWidget {
@@ -30,10 +30,8 @@ class SettingsScreen extends ConsumerWidget {
                 icon: const Icon(Icons.refresh),
                 label: const Text('Refresh Data'),
                 onPressed: () {
-                  ref
-                      .watch(sensorControllerProvider.notifier)
-                      .refreshData();
-                 
+                  ref.watch(sensorControllerProvider.notifier).refreshData();
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Data refreshed!')),
                   );
