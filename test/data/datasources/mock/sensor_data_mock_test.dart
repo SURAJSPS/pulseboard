@@ -1,9 +1,7 @@
-
+import 'package:flutter_test/flutter_test.dart';
 import 'package:pulseboard/domain/entities/sensor.dart';
 
-
-
-final List<Sensor> mocSensorData=<Sensor>[
+final List<Sensor> mocSensorData = <Sensor>[
   Sensor(
     id: '1',
     location: 'Sensor 1',
@@ -23,3 +21,11 @@ final List<Sensor> mocSensorData=<Sensor>[
     isOnline: false,
   ),
 ];
+
+void main() {
+  test('mock sensor data has correct values', () {
+    expect(mocSensorData.length, 2);
+    expect(mocSensorData[0].id, '1');
+    expect(mocSensorData[1].isOnline, false);
+  });
+}

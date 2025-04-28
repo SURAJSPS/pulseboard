@@ -3,7 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pulseboard/data/datasources/mock/sensor_data_mock.dart';
+import 'package:pulseboard/data/models/sensor_model.dart';
 import 'package:pulseboard/data/repositories/sensor_repository.dart';
+import 'package:pulseboard/domain/core/value_failure.dart';
 
 import 'package:pulseboard/domain/entities/sensor.dart';
 
@@ -21,7 +23,7 @@ void main() {
 
   test('fetchSensorData returns Right with data', () async {
     final sensors = [
-      Sensor(
+      SensorModel(
         id: '1',
         location: 'Line A',
         timestamp: DateTime.now(),
@@ -30,7 +32,7 @@ void main() {
         pressure: 1000.0,
         isOnline: true,
       ),
-      Sensor(
+      SensorModel(
         id: '1',
         location: 'Line A',
         timestamp: DateTime.now(),
@@ -43,7 +45,11 @@ void main() {
     when(mockDataService.generateMockData()).thenAnswer((_) async => sensors);
 
     final result = await repository.fetchSensorData();
-    expect(result, right(sensors));
+    expect(result.isRight(), true);
+    expect(
+      result.getOrElse(() => []),
+      sensors.map((e) => e.toDomain()).toList(),
+    );
   });
 
   test('fetchSensorData returns Left for empty data', () async {

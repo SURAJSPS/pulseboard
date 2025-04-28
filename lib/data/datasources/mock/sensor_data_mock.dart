@@ -1,6 +1,8 @@
 import 'dart:math';
 
 
+import 'package:pulseboard/data/models/sensor_model.dart';
+
 import '../../../domain/entities/sensor.dart';
 
 class SensorDataService {
@@ -11,8 +13,8 @@ class SensorDataService {
     return min + random.nextDouble() * (max - min);
   }
 
-  Future<List<Sensor>> generateMockData({int limit = 20}) async {
-    final List<Sensor> readings = [];
+  Future<List<SensorModel>> generateMockData({int limit = 20}) async {
+    final List<SensorModel> readings = [];
     final today = DateTime.now();
     final random = Random();
 
@@ -75,7 +77,7 @@ class SensorDataService {
     for (int i = 0; i < remaining; i++) {
       final isOnline = random.nextDouble() > 0.3;
       readings.add(
-        Sensor(
+        SensorModel(
           id: "$i",
           location: locations[random.nextInt(locations.length)],
           timestamp: DateTime(
@@ -99,7 +101,7 @@ class SensorDataService {
   }
 
   // Helper to create consistent sensor readings
-  Sensor _createSensor({
+  SensorModel _createSensor({
     required String id,
     required double temp,
     required double humi,
@@ -109,7 +111,7 @@ class SensorDataService {
     required List<String> locations,
     bool isOnline = true,
   }) {
-    return Sensor(
+    return SensorModel(
       id: id,
       location: locations[int.parse(id.split('_').last) % locations.length],
       timestamp: DateTime(today.year, today.month, today.day, hour),

@@ -8,7 +8,7 @@ import 'dart:math' as _i2;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:pulseboard/data/datasources/mock/sensor_data_mock.dart' as _i3;
-import 'package:pulseboard/domain/entities/sensor.dart' as _i5;
+import 'package:pulseboard/data/models/sensor_model.dart' as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -54,10 +54,12 @@ class MockSensorDataService extends _i1.Mock implements _i3.SensorDataService {
           as _i2.Random);
 
   @override
-  _i4.Future<List<_i5.Sensor>> generateMockData({int? limit = 20}) =>
+  _i4.Future<List<_i5.SensorModel>> generateMockData({int? limit = 20}) =>
       (super.noSuchMethod(
             Invocation.method(#generateMockData, [], {#limit: limit}),
-            returnValue: _i4.Future<List<_i5.Sensor>>.value(<_i5.Sensor>[]),
+            returnValue: _i4.Future<List<_i5.SensorModel>>.value(
+              <_i5.SensorModel>[],
+            ),
           )
-          as _i4.Future<List<_i5.Sensor>>);
+          as _i4.Future<List<_i5.SensorModel>>);
 }

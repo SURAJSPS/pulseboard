@@ -12,7 +12,7 @@ class SensorRepository implements ISensorRepository {
     final data = await dataService.generateMockData();
 
     if (data.isNotEmpty) {
-      return right(data);
+      return right(data.map((e) => e.toDomain()).toList());
     } else {
       return left(ValueFailure.empty(failedValue: "failedValue"));
     }
