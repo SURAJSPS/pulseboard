@@ -39,18 +39,90 @@ PulseBoard is a Flutter-based application that provides monitoring and managemen
 ## Getting Started
 
 ### Prerequisites
-- Flutter SDK (latest stable version)
-- Dart SDK (latest stable version)
-- Android Studio / VS Code with Flutter extensions
+- **Flutter SDK** (latest stable version)
+- **Dart SDK** (latest stable version)
+- **Android Studio** or **VS Code** with Flutter extensions
 
 ### Installation
-1. Clone the repository
-2. Run `flutter pub get` to install dependencies
-3. Run `flutter run` to start the application
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository_url>
+   cd pulseboard
+   ```
+2. **Install dependencies:**
+   ```bash
+   flutter pub get
+   ```
+3. **(Optional) Set up a device or emulator:**
+   - Use Android Studio's AVD Manager or connect a physical device.
+
+---
+
+## Running the Project
+
+To launch the app on your connected device or emulator:
+
+```bash
+flutter run
+```
+
+- To specify a device:
+  ```bash
+  flutter devices           # List available devices
+  flutter run -d <device_id>
+  ```
+
+- To build a release version:
+  ```bash
+  flutter build apk   # Android
+  flutter build ios   # iOS (on macOS)
+  ```
+
+---
+
+## Running Tests
+
+This project includes unit, application, and widget tests.
+
+- **Run all tests:**
+  ```bash
+  flutter test
+  ```
+
+- **Run a specific test file:**
+  ```bash
+  flutter test test/<path_to_test_file>.dart
+  ```
+
+- **Test directories:**
+  - `test/unit/` – Unit tests for individual components
+  - `test/application/` – Application layer tests
+  - `test/presentation/` – Presentation/UI tests
+  - `test/data/` – Data layer tests
+
+- **Generate test coverage (optional):**
+  ```bash
+  flutter test --coverage
+  ```
+  The coverage report will be generated in the `coverage/` directory.
+
+---
+
+## Troubleshooting
+
+- **Dependency issues:**  
+  Run `flutter pub get` again if you see missing package errors.
+- **Device not found:**  
+  Make sure your emulator is running or your device is connected and recognized (`flutter devices`).
+- **Hot reload not working:**  
+  Use `r` in the terminal running `flutter run` for hot reload, or restart the app.
+
+---
 
 ## Development Guidelines
 
-- Follow the clean architecture principles
+- Follow clean architecture principles
 - Write unit tests for new features
 - Maintain consistent code style
 - Document complex logic and business rules
